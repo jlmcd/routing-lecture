@@ -30,6 +30,7 @@ class App extends React.Component {
             />
           </header>
           <Switch>
+            {/* THE COMPONENT METHOD */}
             <Route
               exact
               path="/"
@@ -40,13 +41,14 @@ class App extends React.Component {
                 />
               )}
             />
-            <Route
-              path="/about"
-              component={() => <About sorted={this.state.house} />}
-            />
+            {/* THE CHILDREN METHOD */}
+            <Route path="/about">
+              <About sorted={this.state.house} />
+            </Route>
+            {/* THE RENDER METHOD */}
             <Route
               path="/house/:name"
-              component={() => (
+              render={() => (
                 <House
                   mainColor={this.state.mainColor}
                   secondaryColor={this.state.secondaryColor}
